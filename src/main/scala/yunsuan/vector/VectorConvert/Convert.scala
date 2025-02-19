@@ -42,6 +42,9 @@ class VectorCvt(xlen :Int) extends Module{
         BitPat("b10_00") -> BitPat("b0010"), // 16
         BitPat("b10_01") -> BitPat("b0100"), // 32
         BitPat("b10_10") -> BitPat("b1000"), // 64
+
+        BitPat("b11_01") -> BitPat("b1000"), // f16->f64/i64/ui64
+        BitPat("b11_11") -> BitPat("b0010"), // f64->f16
       ),
       BitPat("b0000")
     )
@@ -64,6 +67,9 @@ class VectorCvt(xlen :Int) extends Module{
         BitPat("b10_00") -> BitPat("b0001"), // 8
         BitPat("b10_01") -> BitPat("b0010"), // 16
         BitPat("b10_10") -> BitPat("b0100"), // 32
+
+        BitPat("b11_11") -> BitPat("b0010"), // f64->f16
+        BitPat("b11_01") -> BitPat("b1000"), // f16->f64/i64/ui64
       ),
       BitPat("b0000")
     )
